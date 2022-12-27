@@ -1,19 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useIntersection from "../../../hooks/useIntersection";
 import Plans from "./Plans";
 
 const Pricing = () => {
+  const {
+    elementRef: sectionHeaderRef,
+    elementIntersectionState: sectionHeaderIntersectionState,
+  } = useIntersection({ threshold: 0, rootMargin: "0px" }, false);
+
+  const {
+    elementRef: cardOnesRef,
+    elementIntersectionState: cardOneIntersectionState,
+  } = useIntersection({ threshold: 0, rootMargin: "-35% 0px -35% 0px" }, false);
+
+
+  const {
+    elementRef: cardTwosRef,
+    elementIntersectionState: cardTwoIntersectionState,
+  } = useIntersection({ threshold: 0, rootMargin: "-35% 0px -35% 0px" }, false);
+
   return (
     <section className="pricing-section" id="landing-page-pricing">
       <div className="container">
-        <header className="pricing-section__header sections-margin-bottom">
+        <header
+          className={`pricing-section__header sections-margin-bottom intersectionLeftToRight25pxAndOpacity0To1 ${
+            sectionHeaderIntersectionState ? "intersected" : ""
+          }`}
+          ref={sectionHeaderRef}
+        >
           <p className="sections-subtitle">Pricing</p>
           <h2 className="sections-title">
             Eating well without breaking the bank{" "}
           </h2>
         </header>
         <div className="pricing-section__cards">
-          <article className="pricing-section__card starter--card">
+          <article
+            className={`pricing-section__card starter--card intersectionLeftToRight200pxAndOpacity0To1 ${
+              cardOneIntersectionState ? "intersected" : ""
+            }`} ref = {cardOnesRef}
+          >
             <p className="pricing-section__card-subtitle center-text">
               Starter
             </p>
@@ -43,7 +69,13 @@ const Pricing = () => {
               Start eating well
             </Link>
           </article>
-          <article className="pricing-section__card compelete--card">
+          <article
+            className={`pricing-section__card compelete--card intersectionRightToLeft200pxAndOpacity0To1 ${
+              cardTwoIntersectionState ? "intersected" : ""
+            }`}
+
+            ref = {cardTwosRef}
+          >
             <p className="pricing-section__card-subtitle center-text">
               Complete
             </p>

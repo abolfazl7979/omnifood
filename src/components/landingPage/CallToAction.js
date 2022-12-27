@@ -39,7 +39,7 @@ const CallToAction = () => {
             <div className="c-t-a-section__input-container">
               <label
                 className="c-t-a-section-form__inputs-label"
-                for="full-name-id"
+                htmlFor="full-name-id"
               >
                 full name
               </label>
@@ -55,7 +55,7 @@ const CallToAction = () => {
             <div className="c-t-a-section__input-container">
               <label
                 className="c-t-a-section-form__inputs-label"
-                for="email-id"
+                htmlFor="email-id"
               >
                 Email address
               </label>
@@ -71,7 +71,7 @@ const CallToAction = () => {
             <div className="c-t-a-section__input-container">
               <label
                 className="c-t-a-section-form__inputs-label"
-                for="heared-location-id"
+                htmlFor="heared-location-id"
               >
                 When did you hear from us?
               </label>

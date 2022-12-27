@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useIntersection from "../../hooks/useIntersection";
 import meal1 from "../../resources/imgs/meals/meal-1.jpg";
 import meal2 from "../../resources/imgs/meals/meal-2.jpg";
 import flameFire from "../../resources/imgs/svgIcons/flame-outline.svg";
@@ -7,17 +8,61 @@ import spoonAndFork from "../../resources/imgs/svgIcons/restaurant-outline.svg";
 import star from "../../resources/imgs/svgIcons/star-outline.svg";
 
 const Meals = () => {
+  const {
+    elementRef: sectionHeaderRef,
+    elementIntersectionState: sectionHeaderIntersectionState,
+  } = useIntersection({ threshold: 0, rootMargin: "0px" }, false);
+
+  const {
+    elementRef: mealOneRef,
+    elementIntersectionState: mealOneIntersectionState,
+  } = useIntersection(
+    { threshold: 0, rootMargin: "-200px 0px -200px 0px" },
+    false
+  );
+
+  const {
+    elementRef: mealTwoRef,
+    elementIntersectionState: mealTwoIntersectionState,
+  } = useIntersection(
+    { threshold: 0, rootMargin: "-200px 0px -200px 0px" },
+    false
+  );
+  const {
+    elementRef: dietsListRef,
+    elementIntersectionState: dietsListIntersectionState,
+  } = useIntersection(
+    { threshold: 0, rootMargin: "-200px 0px -200px 0px" },
+    false
+  );
+  const {
+    elementRef: seeRecipesRef,
+    elementIntersectionState: seeRecipesIntersectionState,
+  } = useIntersection(
+    { threshold: 0, rootMargin: "0px" },
+    false
+  );
   return (
     <section className="meals-section" id="landing-page-meals">
       <div className="container">
-        <header className="meals-section__header sections-margin-bottom center-text">
+        <header
+          className={`meals-section__header sections-margin-bottom center-text intersectionLeftToRight25pxAndOpacity0To1 ${
+            sectionHeaderIntersectionState ? "intersected" : ""
+          }`}
+          ref={sectionHeaderRef}
+        >
           <p className="sections-subtitle">Meals</p>
           <h2 className="sections-title">
             Omnifood AI chooses from 5,000+ recipes{" "}
           </h2>
         </header>
         <div className="meals-section__content">
-          <article className="meals-section__item">
+          <article
+            className={`meals-section__item intersectionLeftToRight25pxAndOpacity0To1 ${
+              mealOneIntersectionState ? "intersected" : ""
+            }`}
+            ref={mealOneRef}
+          >
             <img
               className="meals-section__item-img"
               alt="Japanese Gyozas"
@@ -58,7 +103,12 @@ const Meals = () => {
               </ul>
             </div>
           </article>
-          <article className="meals-section__item">
+          <article
+            className={`meals-section__item intersectionLeftToRight200pxAndOpacity0To1 ${
+              mealTwoIntersectionState ? "intersected" : ""
+            }`}
+            ref={mealTwoRef}
+          >
             <img
               className="meals-section__item-img"
               alt="Avocado Salad"
@@ -102,7 +152,12 @@ const Meals = () => {
               </ul>
             </div>
           </article>
-          <div className="meals-section__list-container">
+          <div
+            className={`meals-section__list-container intersectionRightToLeft200pxAndOpacity0To1 ${
+              dietsListIntersectionState ? "intersected" : ""
+            }`}
+            ref={dietsListRef}
+          >
             <h3 className="meals-section__list-title">Works with any diet:</h3>
             <ul className="meals-section__list">
               <li className="meals-section__list-item">
@@ -144,7 +199,12 @@ const Meals = () => {
             </ul>
           </div>
         </div>
-        <p className="meals-section__paragraph-for-link">
+        <p
+          className={`meals-section__paragraph-for-link intersectionLeftToRight200pxAndOpacity0To1 ${
+            seeRecipesIntersectionState ? "intersected" : ""
+          }`}
+          ref={seeRecipesRef}
+        >
           <Link className="meals-section__link" to="#">
             See all recipes &rarr;
           </Link>

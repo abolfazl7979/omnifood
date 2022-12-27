@@ -1,6 +1,7 @@
 @import url(./styles/base/_normalize.css);
 @import url(./styles/base/_settings.css);
 @import url(./styles/base/_base.css);
+@import url(./styles//base/_intersectionAnimations.css);
 @import url(./styles/components/Header.css);
 @import url(./styles/components/landingPage/hero/Hero.css);
 @import url(./styles/components/landingPage/hero/Delivered.css);

@@ -1,8 +1,11 @@
 .h-i-w-section {
   padding: 5.2rem 0;
 }
+
 .h-i-w-section__header {
+
 }
+
 .h-i-w-section__items {
   display: flex;
   flex-direction: column;
