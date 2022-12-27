@@ -1,0 +1,15 @@
+@import url(./styles/base/_normalize.css);
+@import url(./styles/base/_settings.css);
+@import url(./styles/base/_base.css);
+@import url(./styles/components/Header.css);
+@import url(./styles/components/landingPage/hero/Hero.css);
+@import url(./styles/components/landingPage/hero/Delivered.css);
+@import url(./styles/components/landingPage/Companies.css);
+@import url(./styles/components/landingPage/HowItWorks.css);
+@import url(./styles/components/landingPage/Meals.css);
+@import url(./styles/components/landingPage/testimonials/Testimonials.css);
+@import url(./styles/components/landingPage/testimonials/Gallaries.css);
+@import url(./styles/components/landingPage/pricing/Pricing.css);
+@import url(./styles/components/landingPage/pricing/Plans.css);
+@import url(./styles/components/landingPage/CallToAction.css);
+@import url(./styles/components/landingPage/Footer.css);

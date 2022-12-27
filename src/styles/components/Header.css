@@ -1,0 +1,142 @@
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.8rem;
+  background: #fdf2e9;
+
+  /* fixed height for sticky navigation. */
+  height: 8.5rem;
+  /* relative for nav on mobile responsiveness. */
+  position: relative;
+}
+
+
+/* sticky navigation */
+.sticky {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  background: #fff;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  z-index: 999;
+  box-shadow: 0px 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+
+.header-section__img-container {
+}
+
+/* link related to logo. */
+.header-section__img-link{
+  /* fix the outline issue */
+  display: inline-block;
+  cursor: pointer;
+}
+.header-section__logo-img {
+  width: 175px;
+}
+
+.header-section__nav {
+}
+
+.header-section__list {
+  display: flex;
+  gap: 4.8rem;
+  font-size: 1.9rem;
+  font-weight: 500;
+  list-style: none;
+}
+
+.header-section__list-item {
+}
+
+/* links releated to header navigation */
+.header-section__link{
+  display: inline-block;
+  text-decoration: none;
+  transition: all 250ms;
+  cursor: pointer;
+}
+
+.header-section__link:hover,
+.header-section__link:active {
+  color: #cf711f;
+}
+
+.header-section__mobile-icons {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  /* to show the icons in hamburger menu too */
+  display: none;
+  z-index: 9999;
+}
+
+.header-section__mobile-icon {
+  width: 34px;
+}
+
+/* 850px = 53em */
+@media (max-width: 53em) {
+  .header-section__mobile-icons{
+    display: block;
+  }
+  .header-section__nav {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(4px);
+    top: 0px;
+    left: 0px;
+    background: #fff;
+    opacity: 0;
+    /* to center the content */
+    display: flex;
+    justify-content: center;
+
+    /* for the animiaton */
+    transform: translateX(100%);
+    transition: all 500ms;
+
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .header-section__list {
+    flex-direction: column;
+    font-size: 2.8rem;
+    gap: 4.8rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 8.6rem;
+  }
+
+  .header-section.menu-open .header-section__nav {
+    transform: translateX(0%);
+    opacity: 0.75;
+    pointer-events: auto;
+    visibility: visible;
+  }
+}
+
+
+/* 520px = 32.5 */
+@media (max-width: 32.5em) {
+  .header-section {
+    padding: 0 2.4rem;
+  }
+  .header-section__logo-img {
+    width: 150px;
+  }
+}
+
+/* 350px = 22em */
+@media (max-width: 22em) {
+  .header-section__logo-img {
+    width: 125px;
+  }
+}

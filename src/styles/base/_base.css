@@ -1,0 +1,205 @@
+*,
+*::after,
+*::before {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: #333;
+  line-height: 1;
+
+  /* should only work if there no element positioned relatively to the body so for hamburger menu
+  , positioned relatively to the header.*/
+  overflow-x: hidden;
+}
+
+/* customized outline */
+/* note : in almost all of the links, we have a transition : all someSec. this will make this outline effect an animation
+but for example, the logo wont act in the same way. */
+*:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 8px #f0b27a;
+}
+
+/* for the navigation on differnet section and their active className */
+.landing-page-nav-active{
+  color :#cf711f;
+}
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* helper classes */
+
+.center-text {
+  text-align: center;
+}
+
+/* general elements styles */
+
+/* a subtitle at the begining of most sections. */
+.sections-subtitle {
+  color: #e67e22;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+
+/* some sections start with the same titles */
+.sections-title {
+  font-size: 4.2rem;
+  font-weight: 700;
+}
+
+/* some sections have titles that have the same amount of margin-bottom to their content */
+.sections-margin-bottom {
+  margin-bottom: 6.8rem;
+}
+/* some icons such as check or cross used in some sections. */
+.list-icons {
+  color: #cf711f;
+  font-size: 2.8rem;
+}
+
+/* app general links */
+.btn:link,
+.btn:visited {
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 250ms;
+}
+
+.btn.main-btn:link,
+.btn.main-btn:visited {
+  background: #e67e22;
+  color: #fff;
+  padding: 1.4rem 2.8rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.btn.main-btn:hover,
+.btn.main-btn:active {
+  background: #cf711f;
+}
+
+/* in the price-section */
+.btn.main-btn.price-section--link:link,
+.btn.main-btn.price-section--link:visited {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* modifier for the main-link which is located in the header*/
+.btn.smaller--btn:link,
+.btn.smaller--btn:visited {
+  padding: 1rem 2.2rem;
+  background: #e67e22;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.btn.smaller--btn:hover,
+.btn.smaller--btn:active {
+  background: #cf711f;
+}
+
+/* main-link modifier located in hero section  */
+.btn.outline--btn:link,
+.btn.outline--btn:visited {
+  color: #777;
+  background: #fff;
+  padding: 1.4rem 2.8rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.btn.outline--btn:hover,
+.btn.outline--btn:active {
+  background: #fdf2e9;
+  box-shadow: 0px 0px 0px 2px #fff;
+}
+
+/* 1200 = 77em */
+@media (max-width: 77em) {
+  html {
+    font-size: 56.25%;
+  }
+  .container {
+    padding: 0 6.2rem;
+  }
+}
+
+/* 944px =  59*/
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+  .btn.main-btn:link,
+  .btn.main-btn:visited {
+    padding: 1.2rem 2.2rem;
+  }
+  .btn.outline--btn:link,
+  .btn.outline--btn:visited {
+    padding: 1.2rem 2.2rem;
+  }
+  .btn.smaller--btn:link,
+  .btn.smaller--btn:visited {
+    padding: 0.8rem 1.8rem;
+  }
+  .container {
+    padding: 0 4.6rem;
+  }
+  .sections-title {
+    font-size: 3.6rem;
+  }
+}
+
+/* 768 = 48em */
+@media (max-width: 48em) {
+  .container {
+    padding: 0 3.2rem !important;
+  }
+  .sections-title {
+    text-align: center;
+  }
+  .sections-subtitle {
+    text-align: center;
+  }
+}
+
+/* 468px =  */
+@media (max-width: 29em) {
+  .container {
+    padding: 0 2.2rem;
+  }
+  .sections-title {
+    font-size: 3.2rem;
+  }
+}
+
+/* only for hamburger menu */
+/* 850px = 53em */
+@media (max-width: 53em) {
+  .btn.smaller--btn:link,
+  .btn.smaller--btn:visited {
+    padding: 1.2rem 2.8rem;
+    font-size: 2.6rem;
+  }
+}

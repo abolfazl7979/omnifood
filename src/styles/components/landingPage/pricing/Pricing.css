@@ -1,0 +1,129 @@
+.pricing-section {
+  padding: 5.2rem 0;
+}
+.pricing-section__header {
+}
+
+.pricing-section__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.4rem;
+  margin-bottom: 4.8rem;
+}
+.pricing-section__card {
+  padding: 6.4rem;
+  border-radius: 10px;
+
+}
+.starter--card {
+  /* to put the cards next to eachother */
+  justify-self: end;
+  border: 3px solid #fdf2e9;
+}
+
+.compelete--card {
+  background: #fdf2e9;
+
+    /* to put the cards next to eachother */
+  justify-self: start;
+  position: relative;
+
+  /* for hidinhg th best value overflowed content */
+  overflow: hidden;
+}
+.compelete--card::after {
+  content: "best value";
+  display: block;
+  position: absolute;
+  right: -10%;
+  top: 5%;
+  transform: rotate(45deg);
+  background: #ffd43b;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  padding: 0.8rem 3.6rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.pricing-section__card-subtitle {
+  color: #cf711f;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 600;
+  margin-bottom: 3.6rem;
+}
+.pricing-section__card-price {
+  font-weight: 600;
+  font-size: 5.8rem;
+  margin-bottom: 1.2rem;
+}
+.pricing-section__card-price span {
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+.pricing-section__card-description {
+  color: #777;
+  font-size: 1.6rem;
+  margin-bottom: 4.8rem;
+}
+.pricing-section__card-list {
+  list-style: none;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  color: #555;
+  margin-bottom: 5.6rem;
+}
+.pricing-section__card-list-item {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+}
+.price-section__description-text {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 8.2rem;
+}
+
+
+
+
+
+
+/* 1100px = 69em */
+@media (max-width: 69em) {
+
+}
+
+/* 786 = 49em */
+@media (max-width: 49em) {
+  .pricing-section__cards {
+    gap: 3.2rem;;
+  }
+}
+
+/* 650px = 40em */
+@media (max-width: 40em) {
+  .pricing-section__cards {
+    grid-template-columns: 1fr;
+    column-gap: 0px;
+    row-gap: 5.2rem;
+  }
+  .starter--card {
+    justify-self: center;
+  }
+  
+  .compelete--card {
+    justify-self: center;
+  }
+}
+
+/* 345 = 24 */
+@media (max-width: 21.5em) {
+  .pricing-section__card {
+    padding: 3.2rem;
+    border-radius: 10px;
+  }
+}

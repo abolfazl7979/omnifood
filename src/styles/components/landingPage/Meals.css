@@ -1,0 +1,160 @@
+.meals-section {
+  padding: 5.2rem 0;
+}
+.meals-section__header {
+}
+.meals-section__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 6.2rem;
+}
+.meals-section__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0px 1rem 3.2rem rgba(0, 0, 0, 0.12);
+  transition: all 0.5s;
+}
+.meals-section__item:hover {
+  transform: translateY(-18px);
+}
+.meals-section__item-img {
+  width: 100%;
+  border-radius: 10px;
+}
+.meals-section__item-content {
+  padding: 4.2rem;
+}
+.meals-section__item-label-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.meals-section__item-label {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 40px;
+  color: #333;
+}
+.item-label--vegetarian {
+  background: #40c057;
+}
+.item-label--vegan {
+  background: #82c91e;
+}
+.item-label--paleo {
+  background: #fcc419;
+}
+.meals-section__item-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+.meals-section__item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  color: #555;
+}
+.meals-section__item-list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+.meals-section__item-icon {
+  width: 26px;
+  filter: invert(49%) sepia(98%) saturate(745%) hue-rotate(349deg)
+  brightness(96%) contrast(87%);
+  margin-right: 1.6rem;
+}
+.meals-section__item-list-item strong {
+  font-weight: 500;
+  display: inline;
+  margin-right: 0.8rem;
+}
+.meals-section__list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+.meals-section__list-title {
+  font-size: 3.2rem;
+  margin-bottom: 2.2rem;
+}
+.meals-section__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+.meals-section__list-item {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.8rem;
+  gap: 1.6rem;
+  color: #666;
+  align-items: center;
+}
+
+.meals-section__paragraph-for-link {
+  margin: 4.2rem 0 3.2rem 0;
+  text-align: center;
+}
+
+
+.meals-section__link:link,
+.meals-section__link:visited {
+  color: #e67e22;
+  text-decoration: none;
+  font-size: 1.8rem;
+  text-align: center;
+  transition: all 250ms;
+  border-bottom: 1px solid #e67e22;
+}
+
+.meals-section__link:hover,
+.meals-section__link:active {
+  color: #cf711f;
+  border-bottom: 1px solid #fff;
+}
+
+
+
+/* 1345 = 84em */
+@media(max-width : 84em) {
+}
+
+
+/* 980px = 62em */
+@media(max-width : 62em) {
+  .meals-section__content {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4.8rem;
+    justify-items: center;
+    column-gap: 3.6rem;
+  }
+  .meals-section__list-container {
+    grid-column: 1 / -1;
+    align-items: center;
+  }
+  .meals-section__list-title {
+    font-size: 2.8rem;
+  }
+  .meals-section__paragraph-for-link {
+    margin-top: 6.4rem;
+  }
+  
+}
+
+/* 590 = 37em */
+@media(max-width : 37em) {
+  .meals-section__content {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 4.8rem;
+    column-gap: 0px;
+    justify-items: center;
+  }
+}
